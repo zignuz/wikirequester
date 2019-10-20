@@ -7,7 +7,7 @@
   </h5>
 </div>
 <div>
-  <h5>
-    <a href={{wikiService.urlArray[0]}}>Abrir en Wikipedia</a>
+  <h5 *ngIf({{wikiService.urlArray[0]}} != null)>
+    <a href={{wikiService.urlArray[0]}} target="_blank">Abrir en Wikipedia</a>
   </h5>
 </div>
