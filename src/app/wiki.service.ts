@@ -8,7 +8,7 @@ export class WikiService {
   wikipediaData;
   wikipediaUrl = "https://es.wikipedia.org/w/api.php?action=opensearch&search=";
   titleArray = [];
-  snipetArray = [];
+  snippetArray = [];
   urlArray = [];
 
   constructor(private http: HttpClient) {}
@@ -21,13 +21,15 @@ export class WikiService {
       .then(data => {
         this.wikipediaData = data;
         console.log(this.wikipediaData);
-        this.processDataToArray();
+        this.splitDataToArray();
       });
   }
 
-  processDataToArray() {
-    for (let item of this.wikipediaData[1]) {
-      console.log(item);
-    }
+  splitDataToArray() {
+    this.titleArray = this.wikipediaData[1];
+    this.snippetArray = this.wikipediaData[2];
+    this.urlArray = this.wikipediaData[3];
   }
+
+
 }

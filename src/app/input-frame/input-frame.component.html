@@ -1,7 +1,7 @@
 <p>
 ¿Qué quieres buscar?
 </p>
-<form [formGroup]="checkoutForm" (ngSubmit)="wikiService.searchFor(checkoutForm.value.word)">
+<form [formGroup]="checkoutForm" (ngSubmit)="this.searchFor(checkoutForm.value.word)">
 
   <div>
     <input id="word" type="text" formControlName="word">
