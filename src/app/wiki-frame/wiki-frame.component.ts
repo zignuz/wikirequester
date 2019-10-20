@@ -7,7 +7,7 @@ import { WikiService } from "../wiki.service";
   styleUrls: ["./wiki-frame.component.css"]
 })
 export class WikiFrameComponent implements OnInit {
-  var;
+
   constructor(private wikiService: WikiService) {}
 
   ngOnInit() {
