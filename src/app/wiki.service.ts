@@ -1,12 +1,13 @@
 import { Injectable } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders, HttpParams, HttpResponse } from "@angular/common/http";
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: "root"
 })
 export class WikiService {
   wikipediaData;
-  wikipediaUrl = "https://es.wikipedia.org/w/api.php?action=opensearch&search=";
+  wikipediaUrl = "/w/api.php?action=opensearch&search=";
   titleArray = [];
   snippetArray = [];
   urlArray = [];
