@@ -1,13 +1,22 @@
-<div>
-  <h3> {{wikiService.titleArray[0]}} </h3>
-</div>
-<div>
-  <h5>
-    {{wikiService.snippetArray[0]}}
-  </h5>
-</div>
-<div>
-  <h5>
-    <a href={{wikiService.urlArray[0]}} target="_blank">{{wikiService.urlArray[0]}}</a>
-  </h5>
+<div *ngIf="wikiService.isEnabled">
+  <!-- Looping que crea una division por cada valor en titleArray -->
+  <!-- solo iteramos por titleArray porque todos tienen la misma cantidad de valores -->
+  <!-- Al ser 3 arrays, guardamos su index para emparejar los articulos que corresponden  -->
+	<div *ngFor="let item of wikiService.titleArray; index as indice">
+    <!-- Division que contiene el titulo mas cercano encontrado -->
+		<div>
+			{{wikiService.titleArray[indice]}}
+		</div>
+    <!-- Division que contiene la descripcion breve (snippet) -->
+		<div>
+			{{wikiService.snippetArray[indice]}}
+		</div>
+    <!-- Division que contiene el link a la pagina en wikipedia -->
+		<div>
+			<p></p>
+			<a href={{wikiService.urlArray[indice]}} target="_blank">
+				{{wikiService.urlArray[indice]}}</a>
+		</div>
+		<hr>
+	</div>
 </div>
