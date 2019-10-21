@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: "root"
 })
 export class WikiService {
+  isEnabled = true;
   wikipediaData;
   wikipediaUrl = "/w/api.php?action=opensearch&search=";
   titleArray = [];
